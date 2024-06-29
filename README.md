@@ -1,3 +1,10 @@
+# SIEM and Log Analysis Project
+
+## Project Overview
+This project involves setting up a SIEM solution, ingesting logs, and analyzing them to detect security threats.
+
+## Repository Structure
+```plaintext
 SIEM-Log-Analysis-Project/
 │
 ├── configurations/
@@ -18,3 +25,5 @@ SIEM-Log-Analysis-Project/
 │   └── incident_summary.md
 │
 └── README.md
+
+
