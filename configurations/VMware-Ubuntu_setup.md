@@ -62,12 +62,9 @@ Initially, I planned to use a virtual machine with Ubuntu Server on my MacBook A
 - **Performance**: Avoids virtualization overhead, utilizing the M1's capabilities.
 - **Ease of Use**: Simplifies the setup process on macOS.
 
-### Updated Setup:
+# Updated Setup:
 
 - **Operating System**: macOS M1
 - **Splunk Version**: Splunk Enterprise
 - **Installation Path**: `/Applications/Splunk/`
 
-### Commit the Changes:
-
-- Write a commit message like "Updated to use macOS M1 for Splunk due to ARM compatibility issues."
