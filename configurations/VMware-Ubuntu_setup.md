@@ -1,4 +1,4 @@
-# SIEM Environment Setup
+# Virtual Machine Environment Setup
 
 ## Virtual Machine Configuration
 - **Virtualization Software:** VMware Fusion
