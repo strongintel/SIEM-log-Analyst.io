@@ -25,3 +25,22 @@
 - **Update System:**
   ```bash
   sudo apt update && sudo apt upgrade
+
+  •	Install essential packages:
+  sudo apt install openssh-server git
+
+## Graphical Interface Installation
+
+### Change of Plan
+Initially, I planned to use the command-line interface, but I decided to switch to a graphical interface for ease of use.
+
+### Desktop Environment
+- **Desktop Environment:** Xubuntu
+- **Installation Command:**
+  ```bash
+  sudo apt install xubuntu-desktop
+
+  	•	Reboot the System:
+  sudo reboot
+
+	•	Log in with your user credentials after the reboot.
