@@ -30,32 +30,38 @@ This section covers the setup of local data sources for ingestion into our SIEM 
 ### Splunk Universal Forwarder Configuration
 
 1. **Download and Install**:
-   - Download the Splunk Universal Forwarder from the official website.
-   - Install it on the host PC using:
+   - **Description**: Download and install the Splunk Universal Forwarder on your host PC.
+   - **Screenshot**:
+     ![Download and Install](../screenshots/data_ingestion/Download_and_install_forwarder.png)
+   - Install command:
      ```bash
      sudo installer -pkg <path-to-installer> -target /
      ```
 
 2. **Configure the Forwarder**:
-   - Enable boot start and start the forwarder:
+   - **Enable boot start and start the forwarder**:
      ```bash
      cd /Applications/SplunkForwarder/bin
      sudo ./splunk enable boot-start
      sudo ./splunk start
      ```
-
-   - Add the Splunk server as a receiver:
+   - **Add the Splunk server as a receiver**:
+     - Step 1:
+       ![Add Splunk Server Step 1](../screenshots/data_ingestion/add_splunk_server_step1.png)
+     - Step 2:
+       ![Add Splunk Server Step 2](../screenshots/data_ingestion/add_splunk_server_step2.png)
+     - Step 3:
+       ![Add Splunk Server Step 3](../screenshots/data_ingestion/add_splunk_server_step3.png)
      ```bash
      sudo ./splunk add forward-server 192.168.1.26:9997
      ```
 
 3. **Configure Inputs**:
-   - Edit the `inputs.conf` file to specify logs to forward:
+   - **Edit the `inputs.conf` file to specify logs to forward**:
      ```bash
      cd /Applications/SplunkForwarder/etc/system/local
      sudo nano inputs.conf
      ```
-
    - Example entries:
      ```ini
      [monitor:///var/log/system.log]
@@ -66,14 +72,15 @@ This section covers the setup of local data sources for ingestion into our SIEM 
      ```
 
 4. **Verify Forwarder Status**:
-   - Check the forwarder status:
+   - **Check the forwarder status**:
+     ![Verify Forward Status](../screenshots/data_ingestion/Verify_forward_status.png)
      ```bash
      sudo ./splunk list forward-server
      ```
-   - Ensure the status is "active".
 
 5. **Verify Data Ingestion**:
-   - Confirm logs from the host PC are visible in the Splunk dashboard.
+   - **Confirm logs from the host PC are visible in the Splunk dashboard**:
+     ![Verify Data Ingestion](../screenshots/data_ingestion/Verify_data_ingestion.png)
 
 ### Verification
 - Confirm that all local logs and forwarded data are successfully ingested and visible in the Splunk dashboard. Check for correct data parsing and timestamps.
