@@ -18,7 +18,7 @@ This section covers the setup of local data sources for ingestion into our SIEM 
 3. **Setting Source Type**:
    - **Description**: Configure the source type and parsing rules for each log file. This example shows setting the source type for the Cisco IronPort log file.
    - **Screenshot**:
-     ![Setting Source Type](../screenshots/data_ingestion/Configure_Source_Type.png)
+     ![Setting Source Type](../screenshots/data_ingestion/Setting_Source_Type.png)
 
 4. **Detailed Process**:
    - **Select Source File**: Drag and drop your file (e.g., `cisco_ironport_web.log`) for upload.
