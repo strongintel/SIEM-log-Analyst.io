@@ -80,7 +80,7 @@ This section covers the setup of local data sources for ingestion into our SIEM 
 
 5. **Verify Data Ingestion**:
    - **Confirm logs from the host PC are visible in the Splunk dashboard**:
-     ![Verify Data Ingestion](../screenshots/data_ingestion/Verify_data_ingestion.png)
+     ![Verify Data Ingestion](../screenshots/data_ingestion/Verify_data_ingestion1.5.png)
 
 ### Verification
 - Confirm that all local logs and forwarded data are successfully ingested and visible in the Splunk dashboard. Check for correct data parsing and timestamps.
