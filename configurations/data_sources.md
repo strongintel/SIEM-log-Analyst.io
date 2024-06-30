@@ -53,7 +53,7 @@ This section covers the setup of local data sources for ingestion into our SIEM 
      - Step 3:
        ![Add Splunk Server Step 3](../screenshots/data_ingestion/add_splunk_server_step3.png)
      ```bash
-     sudo ./splunk add forward-server <your forwarder-ip>:9997
+     sudo ./splunk add forward-server <SPLUNK_SERVER_IP>:9997
      ```
 
 3. **Configure Inputs**:
