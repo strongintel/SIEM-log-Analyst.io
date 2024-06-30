@@ -6,11 +6,11 @@ This document outlines the steps taken to set up the SIEM solution on a Mac M1, 
 ### Installation
 
 1. **Splunk Installation on Mac M1**:
-   ![Splunk Installed](./screenshots/installation/Splunk_Installed.png)
+   ![Splunk Installed](../screenshots/installation/Splunk_Installed.png)
    - The installation was completed on a Mac M1. Ensure you have Rosetta 2 installed, as Splunk requires it for compatibility.
 
 2. **Splunk Enterprise Homepage**:
-   ![Splunk Enterprise Homepage](./screenshots/installation/Splunk_Enterprise_Homepage.png)
+   ![Splunk Enterprise Homepage](../screenshots/installation/Splunk_Enterprise_Homepage.png)
    - This screenshot shows the initial Splunk homepage after the installation. From here, you can start configuring data inputs and dashboards.
 
 ## Key Points
