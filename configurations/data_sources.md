@@ -6,7 +6,7 @@ This section covers the setup of local data sources for ingestion into our SIEM 
 ### Local Logs Configuration
 
 1. **Choosing Data Source**:
-   - **Description**: Select the type of data you want to send to Splunk. Here, you can choose from options like cloud computing, networking, operating systems, or security.
+   - **Description**: Select the type of data you want to send to Splunk. Options include cloud computing, networking, operating systems, or security.
    - **Screenshot**:
      ![Choosing Data Source](../screenshots/data_ingestion/Selecting_Data_Source.png)
 
@@ -27,12 +27,60 @@ This section covers the setup of local data sources for ingestion into our SIEM 
    - **Configure Source Type**: Adjust source type settings, using pre-defined templates like `cisco:asa` or custom settings.
      ![Configure Source Type](../screenshots/data_ingestion/Configure_Source_Type.png)
 
+### Splunk Universal Forwarder Configuration
+
+1. **Download and Install**:
+   - Download the Splunk Universal Forwarder from the official website.
+   - Install it on the host PC using:
+     ```bash
+     sudo installer -pkg <path-to-installer> -target /
+     ```
+
+2. **Configure the Forwarder**:
+   - Enable boot start and start the forwarder:
+     ```bash
+     cd /Applications/SplunkForwarder/bin
+     sudo ./splunk enable boot-start
+     sudo ./splunk start
+     ```
+
+   - Add the Splunk server as a receiver:
+     ```bash
+     sudo ./splunk add forward-server 192.168.1.26:9997
+     ```
+
+3. **Configure Inputs**:
+   - Edit the `inputs.conf` file to specify logs to forward:
+     ```bash
+     cd /Applications/SplunkForwarder/etc/system/local
+     sudo nano inputs.conf
+     ```
+
+   - Example entries:
+     ```ini
+     [monitor:///var/log/system.log]
+     disabled = false
+
+     [monitor:///var/log/secure.log]
+     disabled = false
+     ```
+
+4. **Verify Forwarder Status**:
+   - Check the forwarder status:
+     ```bash
+     sudo ./splunk list forward-server
+     ```
+   - Ensure the status is "active".
+
+5. **Verify Data Ingestion**:
+   - Confirm logs from the host PC are visible in the Splunk dashboard.
+
 ### Verification
-- Confirm that all local logs are successfully ingested and visible in the Splunk dashboard. Check for correct data parsing and timestamps.
+- Confirm that all local logs and forwarded data are successfully ingested and visible in the Splunk dashboard. Check for correct data parsing and timestamps.
 
 ### Next Steps
-- Implement automation with log forwarders for continuous ingestion from local files.
+- Continue to monitor the ingestion of logs and adjust configurations as necessary.
 - Further refine data parsing and field extraction.
 
 ## Conclusion
-This configuration helps ensure local logs are effectively ingested for monitoring and analysis. Further steps will improve data ingestion automation and enhance security monitoring.
+This configuration ensures that local logs and data from the Splunk Universal Forwarder are effectively ingested for monitoring and analysis. Further steps will enhance data ingestion automation and improve security monitoring.
