@@ -47,13 +47,13 @@ This section covers the setup of local data sources for ingestion into our SIEM 
      ```
    - **Add the Splunk server as a receiver**:
      - Step 1:
-     - 
+       
        ![Add Splunk Server Step 1](../screenshots/data_ingestion/add_splunk_server_step1.png)
      - Step 2:
-     - 
+       
        ![Add Splunk Server Step 2](../screenshots/data_ingestion/add_splunk_server_step2.png)
      - Step 3:
-     - 
+       
        ![Add Splunk Server Step 3](../screenshots/data_ingestion/add_splunk_server_step3.png)
      ```bash
      sudo ./splunk add forward-server <SPLUNK_SERVER_IP>:9997
